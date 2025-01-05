@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
+// import { toast } from "@/hooks/use-toast";
 import { callAPI } from "@/lib/api";
 import { FC, useState } from "react";
 import { FaSkype } from "react-icons/fa";
@@ -68,19 +68,20 @@ const ContactUs: FC = () => {
     })
       .then((res) => {
         console.log(res);
-        toast({
-          title: "Message Sent",
-          description: "Your message has been sent successfully",
-          // variant: "success",
-        });
+        // toast({
+        //   title: "Message Sent",
+        //   description: "Your message has been sent successfully",
+        //   // variant: "success",
+        // });
       })
       .catch((err) => {
-        if (err.response.data)
-          toast({
-            title: "Error",
-            description: err.response.data,
-            variant: "destructive",
-          });
+        // if (err.response.data)
+        // toast({
+        //   title: "Error",
+        //   description: err.response.data,
+        //   variant: "destructive",
+        // });
+        //
       });
   };
   return (

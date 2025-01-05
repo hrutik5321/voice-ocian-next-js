@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 import { callAPI } from "@/lib/api";
 import { useEffect, useState } from "react";
 import { fetchLanguagesAndCategories } from "@/services/home";
-import { toast } from "@/hooks/use-toast";
 import { artistStyles } from "./constants";
 
 const CartCheckout = () => {
@@ -63,11 +62,11 @@ const CartCheckout = () => {
       })
         .then((data) => {
           console.log(data);
-          toast({
-            title: "Order Created",
-            description: "Your order has been created successfully",
-            // variant: "success",
-          });
+          // toast({
+          //   title: "Order Created",
+          //   description: "Your order has been created successfully",
+          //   // variant: "success",
+          // });
         })
         .catch((err) => {
           console.log(err);

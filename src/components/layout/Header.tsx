@@ -133,12 +133,12 @@ const Header = () => {
             <HoverCardContent className="bg-white p-0 rounded border-t-2 border-primary border-r-0 border-b-0 border-l-0 translate-x-[26%] mt-[-5px]">
               {linksData.map((link, i) => {
                 return (
-                  <div className="hover:bg-gray-100 px-5">
+                  <div className="hover:bg-gray-100 px-5" key={i}>
                     <Link
                       className=" text-sm px-4 py-1 cursor-pointer w-full "
                       // onClick={() => navigate(link.link)}
                       href={link.link}
-                      key={i}
+                      //
                     >
                       <p className="text-grayTxt" key={link.name}>
                         {link.name}
