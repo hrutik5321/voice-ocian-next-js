@@ -23,6 +23,7 @@ import { Actor, ArtistProfileResponse } from "@/types";
 import { AxiosError } from "axios";
 import { FiArchive } from "react-icons/fi";
 import UserSampleCard from "@/components/cards/UserSampleCard";
+import { useParams } from "next/navigation";
 
 interface UserDetailCardProps {
   Icon: IconType;
@@ -46,8 +47,9 @@ const UserDetailCard: FC<UserDetailCardProps> = ({
   </div>
 );
 
-const UserDetail: FC<{ params: { slug: string } }> = ({ params }) => {
+const UserDetail: FC = () => {
   const dispatch = useAppDispatch();
+  const params = useParams<{ slug: string }>();
   const slug = params.slug;
 
   const [artistDetails, setArtistDetails] =

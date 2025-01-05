@@ -65,24 +65,14 @@ const ContactUs: FC = () => {
         subject,
         message,
       },
-    })
-      .then((res) => {
-        console.log(res);
-        // toast({
-        //   title: "Message Sent",
-        //   description: "Your message has been sent successfully",
-        //   // variant: "success",
-        // });
-      })
-      .catch((err) => {
-        // if (err.response.data)
-        // toast({
-        //   title: "Error",
-        //   description: err.response.data,
-        //   variant: "destructive",
-        // });
-        //
-      });
+    }).then((res) => {
+      console.log(res);
+      // toast({
+      //   title: "Message Sent",
+      //   description: "Your message has been sent successfully",
+      //   // variant: "success",
+      // });
+    });
   };
   return (
     <div className="w-screen">
@@ -294,7 +284,7 @@ const ContactUs: FC = () => {
           <div className="w-full   grid lg:grid-cols-3 grid-cols-1 gap-3 mb-5 mt-5">
             {partnerOffices.map((office) => {
               return (
-                <div>
+                <div key={office.title}>
                   <p className="text-lg font-bold text-primary">
                     {office.title}
                   </p>
