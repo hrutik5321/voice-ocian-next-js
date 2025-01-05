@@ -1,21 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.home-slider .slick-dots {
+  bottom: -52px;
+}
+.home-slider .slick-active > .active-dot {
+  background-color: #f04323;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.user-slider .slick-dots {
+  bottom: -42px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.user-slider .slick-active > .active-dot {
+  background-color: #f04323;
 }
