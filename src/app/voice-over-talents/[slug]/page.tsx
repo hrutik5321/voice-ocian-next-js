@@ -87,17 +87,23 @@ const UserDetail: FC = () => {
           <UserDetailCard
             Icon={FaPerson}
             title="Accents"
-            description={artistDetails?.artist?.accents || "N/A"}
+            description={
+              artistDetails?.artist?.accents.split(",").join(", ") || "N/A"
+            }
           />
           <UserDetailCard
             Icon={FiArchive}
             title="Roles"
-            description={artistDetails?.artist?.roles || "N/A"}
+            description={
+              artistDetails?.artist?.roles.split(",_").join(", ") || "N/A"
+            }
           />
           <UserDetailCard
             Icon={FaListCheck}
             title="Styles"
-            description={artistDetails?.artist?.styles || "N/A"}
+            description={
+              artistDetails?.artist?.styles.split(",").join(", ") || "N/A"
+            }
           />
           <UserDetailCard
             Icon={FaMicrophoneLines}
@@ -165,10 +171,10 @@ const UserDetail: FC = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center mt-5 lg:block">
-                <p className="text-base font-medium text-yellow-600">
-                  {artistDetails?.artist?.id || "N/A"}
-                </p>
-                <p className="text-base font-medium text-yellow-600">
+                {/* <p className="text-base font-medium text-yellow-600"> */}
+                {/*   {artistDetails?.artist?.id || "N/A"} */}
+                {/* </p> */}
+                <p className="text-base font-medium text-primary">
                   {artistDetails?.artist?.name || "N/A"}
                 </p>
                 <div className="flex items-center gap-3">
@@ -194,7 +200,9 @@ const UserDetail: FC = () => {
                     </p>
                     <div className="flex gap-1 w-full flex-wrap">
                       <p className="text-sm">
-                        {artistDetails?.artist?.category || "N/A"}
+                        {artistDetails?.artist?.category
+                          .split("_")
+                          .join(", ") || "N/A"}
                       </p>
                     </div>
                   </div>

@@ -27,8 +27,10 @@ const VoiceOverTalents = () => {
   const searchParams = useSearchParams();
   const queryLanguage = searchParams.get("language") || "";
   const queryCategory = searchParams.get("category") || "";
+  const queryGender = searchParams.get("gender") || "";
+
   const [language, setLanguage] = useState<string>(queryLanguage);
-  const [gender, setGender] = useState<string>("");
+  const [gender, setGender] = useState<string>(queryGender);
   const [category, setCategory] = useState<string>(queryCategory);
   const [artists, setArtists] = useState<Actor[]>([]);
 
@@ -61,10 +63,10 @@ const VoiceOverTalents = () => {
   useEffect(() => {
     getArtistsData({
       category: queryCategory,
-      gender: "",
+      gender: queryGender,
       language: queryLanguage,
     });
-  }, [queryCategory, queryLanguage]);
+  }, [queryCategory, queryLanguage, queryGender]);
   return (
     <div>
       {/* <img loading="lazy" 

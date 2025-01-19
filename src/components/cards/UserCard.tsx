@@ -48,7 +48,7 @@ const UserCard: FC<UserCardProps> = ({
           >
             {details?.name}
           </Link>
-          <p className="truncate w-full text-xs">{details?.id}</p>
+          {/* <p className="truncate w-full text-xs">{details?.id}</p> */}
           <p>Channel Promo</p>
         </div>
       </div>
@@ -59,7 +59,9 @@ const UserCard: FC<UserCardProps> = ({
         <p>{details?.languages}</p>
 
         {details?.artist_category ? <p>|</p> : <></>}
-        <p>{details?.artist_category}</p>
+        <p className="text-black font-normal text-sm">
+          {details?.artist_category.split("_").join(", ")}
+        </p>
       </div>
       <audio controls className="w-full mt-3">
         <source

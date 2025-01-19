@@ -35,8 +35,8 @@ const UserSampleCard: FC<UserCardProps> = ({
           )}
         />
         <div className="text-sm mt-2 lg:mt-0 text-center lg:text-left">
-          <p>{details?.artist_name}</p>
-          <p className="truncate w-full text-xs">{details?.id}</p>
+          <p className="text-primary">{details?.artist_name}</p>
+          {/* <p className="truncate w-full text-xs">{details?.id}</p> */}
           <p>{details?.category}</p>
         </div>
       </div>

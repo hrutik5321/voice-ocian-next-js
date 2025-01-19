@@ -18,6 +18,8 @@ const VoicesTabContent = () => {
   const router = useRouter();
   const [langAndCategories, setLangAndCategories] =
     useState<LanguagesAndCategoryResponse>();
+  const [gender, setGender] = useState<string>("");
+
   const [language, setLanguage] = useState<string>("");
   const [category, setCategory] = useState<string>("");
 
@@ -101,6 +103,31 @@ const VoicesTabContent = () => {
                 </SelectContent>
               </Select>
             </div>
+            <div className="flex flex-col flex-1">
+              <p>Select Gender</p>
+              <Select
+                value={gender}
+                onValueChange={(e) => {
+                  setGender(e);
+                }}
+              >
+                <SelectTrigger className="">
+                  <SelectValue placeholder=" Gender" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Gender</SelectLabel>
+                    {/* {langAndCategories?.categories.map((category) => {
+                            return ( */}
+                    <SelectItem value="Male">Male</SelectItem>
+                    <SelectItem value="Female">Female</SelectItem>
+                    <SelectItem value="Others">Others</SelectItem>
+                    {/* );
+                          })} */}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
           <Button
             className="bg-primary mt-5 md:mt-0"
@@ -111,7 +138,9 @@ const VoicesTabContent = () => {
                   "/voice-over-talents?language=" +
                     language +
                     "&category=" +
-                    category,
+                    category +
+                    "&gender=" +
+                    gender,
                 );
               }
             }}
