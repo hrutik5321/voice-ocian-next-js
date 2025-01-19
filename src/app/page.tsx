@@ -397,7 +397,7 @@ const Home = () => {
                     {...userSettings}
                     className="lg:w-[1170px] w-screen px-5 lg:px-0 user-slider gap-5"
                   >
-                    {actors.map((actor, i) => {
+                    {actors.slice(0, 8).map((actor, i) => {
                       return <UserCard details={actor} isSlider key={i} />;
                     })}
                   </Slider>
@@ -416,7 +416,7 @@ const Home = () => {
                   {...userSettings}
                   className="lg:w-[1170px] w-screen px-5 lg:px-0 user-slider gap-5"
                 >
-                  {actors.map((actor, i) => {
+                  {actors.slice(0, 8).map((actor, i) => {
                     return <UserCard details={actor} isSlider key={i} />;
                   })}
                 </Slider>
