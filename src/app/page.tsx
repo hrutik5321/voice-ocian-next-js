@@ -200,6 +200,7 @@ const Home = () => {
   }
   return (
     <div className="w-screen overflow-x-hidden">
+      {/* Hi */}
       {/* <img loading="lazy" 
             src="vite.svg"
             className="w-screen h-[500px] md:h-[650px] bg-center"
