@@ -111,31 +111,31 @@ const Home = () => {
       title: "Voices",
       index: 0,
       icon: FaMicrophone,
-      child: <VoicesTabContent />,
+      child: <VoicesTabContent key={0} />,
     },
     {
       title: "eLearning",
       index: 1,
       icon: FaGraduationCap,
-      child: <ElearningTabContent />,
+      child: <ElearningTabContent key={1} />,
     },
     {
       title: "IVR",
       index: 2,
       icon: FaEye,
-      child: <IvrTabContent />,
+      child: <IvrTabContent key={2} />,
     },
     {
       title: "Video",
       index: 3,
       icon: IoVideocam,
-      child: <VideoTabContent />,
+      child: <VideoTabContent key={3} />,
     },
     {
       title: "Commercials",
       index: 4,
       icon: MdLeaderboard,
-      child: <CommercialsTabContent />,
+      child: <CommercialsTabContent key={4} />,
     },
   ];
   const settings: Settings = {
