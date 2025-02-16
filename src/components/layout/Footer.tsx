@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   const labelTitle = (title: string) => (
-    <p className="text-3xl text-white font-medium">{title}</p>
+    <span className="text-3xl text-white font-medium">{title}</span>
   );
   return (
     <div className="w-screen lg:flex flex-col items-center bg-[#1A1C2B] pt-10">

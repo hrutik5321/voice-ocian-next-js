@@ -13,10 +13,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { FaCaretDown } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 const HeaderSheet = () => {
   const [showNavigationSheet, setShowNavigationSheet] = useState(false);
@@ -61,9 +62,16 @@ const HeaderSheet = () => {
         onOpenChange={(e) => setShowNavigationSheet(e)}
       >
         <SheetTrigger className="lg:hidden">
-          <Button variant="ghost" className="bg-primary" size="sm">
+          <div
+            className={cn(
+              buttonVariants({
+                variant: "ghost",
+                size: "sm",
+              }),
+            )}
+          >
             <TiThMenu size={16} className="text-white" />
-          </Button>
+          </div>
         </SheetTrigger>
         <SheetContent className="w-screen">
           <SheetHeader className="mt-5">
