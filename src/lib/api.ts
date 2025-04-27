@@ -9,7 +9,7 @@ export function callAPI<T>(
   config: AxiosRequestConfig,
 ): Promise<AxiosResponse<T>> {
   return axios.request<T>({
-    url: "https://voiceocean.erp.manifestsolution.com/api" + path,
+    url: "https://voiceoceanllp.com:3003" + path,
     paramsSerializer: { indexes: null },
     ...config,
   });
