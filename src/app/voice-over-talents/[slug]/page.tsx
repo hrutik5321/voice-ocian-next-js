@@ -24,6 +24,7 @@ import { AxiosError } from "axios";
 import { FiArchive } from "react-icons/fi";
 import UserSampleCard from "@/components/cards/UserSampleCard";
 import { useParams } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
 
 interface UserDetailCardProps {
   Icon: IconType;
@@ -49,6 +50,8 @@ const UserDetailCard: FC<UserDetailCardProps> = ({
 
 const UserDetail: FC = () => {
   const dispatch = useAppDispatch();
+  const { toast } = useToast();
+
   const params = useParams<{ slug: string }>();
   const slug = params.slug;
 
@@ -163,6 +166,11 @@ const UserDetail: FC = () => {
                             },
                           }),
                         );
+                        toast({
+                          title: "Success",
+                          variant: "success",
+                          description: "Artist added to your cart",
+                        });
                       }
                     }}
                   >

@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 // import { toast } from "@/hooks/use-toast";
 import { callAPI } from "@/lib/api";
 import { FC, useState } from "react";
@@ -22,6 +24,7 @@ import { FiClock } from "react-icons/fi";
 import { IoMail } from "react-icons/io5";
 
 const ContactUs: FC = () => {
+  const { toast } = useToast();
   const partnerOffices = [
     {
       title: "MALAYSIA",
@@ -66,19 +69,26 @@ const ContactUs: FC = () => {
         message,
       },
     }).then((res) => {
-      console.log(res);
-      // toast({
-      //   title: "Message Sent",
-      //   description: "Your message has been sent successfully",
-      //   // variant: "success",
-      // });
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully",
+
+        variant: "success",
+      });
+    });
+  };
+  const showToast = () => {
+    toast({
+      title: "Success",
+      description: "Your message has been sent successfully",
+      variant: "success",
     });
   };
   return (
     <div className="w-screen">
       <div className="bg-company-overview h-[350px] flex justify-center items-center">
         <div className="mt-24 lg:mt-10">
-          <div className="flex justify-center gap-5">
+          <div className="flex justify-center gap-5" onClick={showToast}>
             <p className="text-base text-primary">HOME</p>
             <p className="text-base text-primary">CONTACT US</p>
           </div>
