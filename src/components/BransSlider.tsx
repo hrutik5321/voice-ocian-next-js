@@ -23,7 +23,7 @@ const BransSlider = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    customPaging: function () {
+    customPaging: function() {
       return (
         <div className="w-[10px] h-[10px] rounded-full bg-gray-600 bg-opacity-30 active-dot"></div>
       );
@@ -32,15 +32,15 @@ const BransSlider = () => {
       {
         breakpoint: 1500,
         settings: {
-          slidesToShow: clients.length > 7 ? 7 : clients.length / 2,
+          slidesToShow: clients.length > 7 ? 5 : clients.length / 2,
           slidesToScroll: clients.length > 7 ? 3 : clients.length / 2,
         },
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -71,7 +71,7 @@ const BransSlider = () => {
             <img
               loading="lazy"
               src={brand.client_logo}
-              className="mx-auto max-w-[50vw]"
+              className="mx-auto max-w-[200px]"
             />
           </div>
         );

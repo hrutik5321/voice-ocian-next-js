@@ -145,7 +145,7 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    customPaging: function () {
+    customPaging: function() {
       return (
         <div className="w-[10px] h-[10px] rounded-full bg-gray-600 bg-opacity-30 active-dot"></div>
       );
@@ -153,7 +153,7 @@ const Home = () => {
   };
   const userSettings: Settings = {
     dots: true,
-    customPaging: function () {
+    customPaging: function() {
       return (
         <div className="w-[10px] h-[10px] rounded-full bg-gray-600 bg-opacity-30 active-dot"></div>
       );
@@ -302,8 +302,8 @@ const Home = () => {
           </div>
         </div>
         <div className="w-screen flex justify-center bg-company-overview py-14">
-          <div className="w-full max-w-[1170px] text-white p-5 lg:p-0">
-            <p className="text-center text-white text-2xl lg:text-4xl mb-10">
+          <div className="w-full max-w-[1170px]  p-5 lg:p-0">
+            <p className="text-center  text-2xl lg:text-4xl mb-10">
               Welcome to <span className="font-bold">Voice Ocean</span>
             </p>
             <div className="lg:flex gap-10">
