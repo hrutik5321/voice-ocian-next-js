@@ -68,7 +68,7 @@ const ContactUs: FC = () => {
         subject,
         message,
       },
-    }).then((res) => {
+    }).then(() => {
       toast({
         title: "Success",
         description: "Your message has been sent successfully",
