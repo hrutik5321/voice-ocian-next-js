@@ -5,12 +5,12 @@ const ServicesLinks = () => {
     {
       name: "eLearning",
       link: "/learning",
-      imgUrl: "https://voiceoceanllp.com/img/Voice%20Ocean%20e-Learning.jpg",
+      imgUrl: "https://voiceoceanllp.com/img/notification.jpeg",
     },
     {
       name: "IVR",
       link: "/ivr",
-      imgUrl: "https://voiceoceanllp.com/img/Voice%20Ocean%20IVR.jpg",
+      imgUrl: "https://voiceoceanllp.com/img/help.jpeg",
     },
     {
       name: "Videos",
@@ -21,8 +21,7 @@ const ServicesLinks = () => {
     {
       name: "Commercials",
       link: "/commercial-voice-over",
-      imgUrl:
-        "https://voiceoceanllp.com/img/Voice%20Ocean%20Commercials%20&%20Spots.jpg",
+      imgUrl: "https://voiceoceanllp.com/img/media.jpeg",
     },
   ];
   return (

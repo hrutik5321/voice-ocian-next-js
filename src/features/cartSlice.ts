@@ -19,10 +19,10 @@ export const CartSlice = createSlice({
     },
     addArtist: (
       state,
-      action: { type: string; payload: { bookedArtists: Actor } },
+      action: { type: string; payload: { bookedArtists: Actor } }
     ) => {
       const isuserPresent = state.bookedArtists.filter(
-        (user) => user.id === action.payload.bookedArtists.id,
+        (user) => user.id === action.payload.bookedArtists.id
       );
 
       if (isuserPresent.length) {
@@ -37,10 +37,10 @@ export const CartSlice = createSlice({
     },
     removeArtist: (
       state,
-      action: { type: string; payload: { removedArtist: Actor } },
+      action: { type: string; payload: { removedArtist: Actor } }
     ) => {
       const filteredActors = state.bookedArtists.filter(
-        (user) => user.id !== action.payload.removedArtist.id,
+        (user) => user.id !== action.payload.removedArtist.id
       );
       return {
         ...state,
@@ -50,9 +50,13 @@ export const CartSlice = createSlice({
     removeCart: (state) => {
       state.cartCount -= 1;
     },
+    clearCart: (state) => {
+      state.cartCount = 0;
+      state.bookedArtists = [];
+    },
   },
 });
 
 export default CartSlice.reducer;
-export const { addCart, removeCart, addArtist, removeArtist } =
+export const { addCart, removeCart, addArtist, removeArtist, clearCart } =
   CartSlice.actions;

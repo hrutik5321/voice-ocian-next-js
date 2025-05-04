@@ -30,7 +30,7 @@ const CommercialsService = () => {
             <div className="lg:w-[500px] lg:h-[500px] p-2 border">
               <img
                 loading="lazy"
-                src="https://voiceoceanllp.com/img/Voice%20Ocean%20Commercials%20&%20Spots.jpg"
+                src="https://voiceoceanllp.com/img/media.jpeg"
                 className="w-full h-full"
               />
             </div>

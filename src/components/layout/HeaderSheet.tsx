@@ -67,7 +67,7 @@ const HeaderSheet = () => {
               buttonVariants({
                 variant: "ghost",
                 size: "sm",
-              }),
+              })
             )}
           >
             <TiThMenu size={16} className="text-white" />
@@ -86,6 +86,7 @@ const HeaderSheet = () => {
                   className="w-full"
                   alt="logo"
                   width={100}
+                  height={100}
                 />
               </Link>
             </div>
@@ -133,8 +134,9 @@ const HeaderSheet = () => {
                       <DropdownMenuItem key={link.name}>
                         <Link
                           href={link.link}
-                          className="hover:bg-gray-100 text-sm px-4 py-2 cursor-pointer "
+                          className="hover:bg-gray-100 text-sm px-4 py-2 cursor-pointer w-full"
                           // onClick={() => navigate(link.link)}
+                          onClick={() => setShowNavigationSheet(false)}
                         >
                           <p className="text-grayTxt text-lg" key={link.name}>
                             {link.name}

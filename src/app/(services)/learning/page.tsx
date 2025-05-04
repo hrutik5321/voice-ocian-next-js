@@ -32,7 +32,7 @@ const Elearning = () => {
             <div className="lg:w-[500px] lg:h-[500px] p-2 border">
               <img
                 loading="lazy"
-                src="https://voiceoceanllp.com/img/Voice%20Ocean%20e-Learning.jpg"
+                src="https://voiceoceanllp.com/img/help.jpeg"
                 className="w-full "
               />
             </div>

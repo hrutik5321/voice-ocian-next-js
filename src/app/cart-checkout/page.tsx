@@ -1,6 +1,6 @@
 "use client";
 import UserCard from "@/components/cards/UserCard";
-import { useAppSelector } from "@/store";
+import { useAppDispatch, useAppSelector } from "@/store";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,6 +18,9 @@ import { callAPI } from "@/lib/api";
 import { useEffect, useState } from "react";
 import { fetchLanguagesAndCategories } from "@/services/home";
 import { artistStyles } from "./constants";
+import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
+import { clearCart } from "@/features/cartSlice";
 
 const CartCheckout = () => {
   const cart = useAppSelector((state) => state.cart);
@@ -27,6 +30,8 @@ const CartCheckout = () => {
   const [instruction, setInstruction] = useState<string>("");
   const [script, setScript] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const [languagesList, setLanguagesList] = useState<string[]>([]);
   useEffect(() => {
@@ -60,13 +65,14 @@ const CartCheckout = () => {
           status: "OPEN",
         },
       })
-        .then((data) => {
-          console.log(data);
-          // toast({
-          //   title: "Order Created",
-          //   description: "Your order has been created successfully",
-          //   // variant: "success",
-          // });
+        .then(() => {
+          toast({
+            title: "Order Created",
+            description: "Your order has been created successfully",
+            variant: "success",
+          });
+          dispatch(clearCart());
+          router.push("/");
         })
         .catch((err) => {
           console.log(err);
